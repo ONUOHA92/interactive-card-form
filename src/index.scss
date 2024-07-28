@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Overpass:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.cardscontainer {
+  background-image: url("/src/images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  position: relative;
+
+  .cardFront,
+  .cardBack {
+    position: absolute;
+    color: hsl(270, 3%, 87%);
+    top: 90%;
+    left: 45%;
+    width: 28rem;
+    height: 16rem;
+    border-radius: 10px;
+    background-size: cover;
+    transform: translate(-50%, -50%);
+  }
+
+  .cardFront {
+    background-image: url("/src/images/bg-card-front.png");
+    z-index: 500;
+    &__box {
+      padding: 2rem;
+      h2 {
+        margin: 0;
+        font-size: 1.8rem;
+        letter-spacing: 1.5px;
+      }
+      img {
+        width: 6rem;
+        margin-bottom: 3.5rem;
+      }
+      &--user {
+        display: flex;
+        justify-content: space-between;
+
+        h3 {
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  .cardBack {
+    top: 50%;
+    left: 55%;
+    background-image: url("/src/images/bg-card-back.png");
+
+    h3 {
+      margin-top: 7rem;
+      margin-left: 23rem;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+
+  input {
+    width: 92%;
+    padding: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid hsla(0, 0%, 59%, 0.572);
+  }
+
+  & h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: hsl(278, 68%, 11%);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .cardDetails {
+    width: 30rem;
+    flex-direction: column;
+
+    .error {
+      color: red;
+      font-size: 1rem;
+      margin: 0;
+      display: none;
+      &.show {
+        display: block;
+      }
+    }
+
+    &__box {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      flex: 1 1 0px;
+
+      input {
+        width: 80%;
+        padding: 1rem;
+        font-family: "space Grotesk", sans-serif;
+      }
+
+      &--1 {
+        width: 60% !important;
+      }
+      &--exp {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        gap: 1rem;
+        p {
+          grid-row: 2;
+        }
+        input {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+
+  img {
+    width: 30%;
+    align-self: center;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 1.8rem;
+    color: hsl(217, 12%, 63%);
+  }
+}
+
+button {
+  // margin-top: 3rem;
+  padding: 1.5rem;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  background-color: hsl(278, 68%, 11%);
+}
+.show {
+  display: flex !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+@media screen and (min-width: 1050px) {
+  html {
+    font-size: 85%;
+  }
+
+  .cardContainer {
+    display: flex;
+    align-items: center;
+
+    .form {
+      margin-top: 0;
+      margin-left: 20rem;
+    }
+
+    .cardscontainer {
+      height: 100vh;
+      width: 30vw;
+      background-image: url("/src/images/bg-main-desktop.png");
+      position: relative;
+
+      .cardFront,
+      .cardBack {
+        position: absolute;
+        color: hsl(270, 3%, 87%);
+        top: 35%;
+        left: 80%;
+        width: 28rem;
+        height: 16rem;
+        border-radius: 10px;
+        background-size: cover;
+        transform: translate(-50%, -50%);
+      }
+      .cardBack {
+        top: 66%;
+        left: 100%;
+      }
+    }
+  }
+}
